@@ -15,4 +15,5 @@ Coursera Course on ML:-
 - [x] Study of Statistics and Probablity Distribution.
 - [x] Implementation of PCA
 - [x] Study of Eigenfaces and Fisherfaces.
-- [ ] Implementation of Eigenfaces and Fisherfaces.
+- [x] Implementation of Eigenfaces.
+- [ ] Implementation of Fisherfaces.
