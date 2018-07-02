@@ -45,7 +45,7 @@ X_rec = Z*U_red';
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% Recognition fo a give input image----------
+% Recognition for a given input image----------
 % In_img = imread('test1.jpeg'); %change this to change input image
 % In_img = double(rgb2gray(In_img));
 % Y = reshape(In_img,1,1024) - X_avg;
