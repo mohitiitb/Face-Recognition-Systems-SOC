@@ -43,40 +43,56 @@ X_rec = Z*U_red';
 %     subplot(4,4,i),imshow(reshape(uint8(X_rec(i,:))+X_avg,32,32));
 % end;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Recognition----------
-In_img = imread('test1.jpeg'); %change this to change input image
-In_img = double(rgb2gray(In_img));
-Y = reshape(In_img,1,1024) - X_avg;
-figure(5);
-imshow(uint8(In_img));
-Y_in_eigenspace = Y*U_red;
-Y_rec = Y_in_eigenspace*U_red';
-epsilon = sum((Y - Y_rec).^2);
-figure(6);
-imshow(uint8(reshape(Y_rec + X_avg,32,32)));
-if (epsilon < 2.5e+05)
-    fprintf('Is a face\n');
-else
-    fprintf('Not a face\n');
-end; 
 
 
-min = 11e+5;
-min_index = 0;
-if (epsilon < 2.5e+05)
-    for i=1:m,
-        eps = sum((Y_in_eigenspace - Z(i,:)).^2);
-        if (eps < min)
-            min = eps;
-            min_index = i;
-        end;
+% Recognition fo a give input image----------
+% In_img = imread('test1.jpeg'); %change this to change input image
+% In_img = double(rgb2gray(In_img));
+% Y = reshape(In_img,1,1024) - X_avg;
+% figure(5);
+% imshow(uint8(In_img));
+% Y_in_eigenspace = Y*U_red;
+% Y_rec = Y_in_eigenspace*U_red';
+% epsilon = sum((Y - Y_rec).^2);
+% figure(6);
+% imshow(uint8(reshape(Y_rec + X_avg,32,32)));
+% if (epsilon < 2.5e+05)
+%     fprintf('Is a face\n');
+% else
+%     fprintf('Not a face\n');
+% end; 
+% 
+% 
+% min = 11e+5;
+% min_index = 0;
+% if (epsilon < 2.5e+05)
+%     for i=1:m,
+%         eps = sum((Y_in_eigenspace - Z(i,:)).^2);
+%         if (eps < min)
+%             min = eps;
+%             min_index = i;
+%         end;
+%     end;
+%     if (min_index == 0)
+%         fprintf('Image did not match with any image in the database\n\n');
+%     else
+%         fprintf('Image matched with index- \n\n');
+%         min_index
+%     end;
+%     
+% end;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+% Error percentage on the training set in detecting they are face or not
+count =0;
+for i=1:m,
+    ep = sum((X_norm(i,:) - X_rec(i,:)).^2);
+    if (ep < 2.5e+05)
+        count = count +1;
     end;
-    if (min_index == 0)
-        fprintf('Image did not match with any image in the database\n\n');
-    else
-        fprintf('Image matched with index- \n\n');
-        min_index
-    end;
-    
 end;
+fprintf('Percantage accuracy in training set\n');
+percentage_accuracy = (count/m)*100;   %(output was 97.5145)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
