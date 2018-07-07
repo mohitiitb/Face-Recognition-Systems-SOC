@@ -1,5 +1,5 @@
 # Face-Recognition-Systems-SOC
-Coursera Course on ML:-
+Coursera Course on ML(implementations at https://github.com/mohitiitb/ML-coursera):-
 - [x] Week 1
 - [x] Week 2
 - [x] Week 3
