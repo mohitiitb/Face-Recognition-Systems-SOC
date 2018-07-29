@@ -14,10 +14,10 @@ Coursera Course on ML(implementations at https://github.com/mohitiitb/ML-courser
 - [x] Softmax Regression
 - [x] Nearest Neighbour
 - [x] Study of Statistics and Probablity Distribution.
-          - [x] Bernouli Distribution
-          - [x] Gaussian Distribution
-          - [x] Poisson Distribution
-          - [x] Chi Distribution
+- [x] Bernouli Distribution
+- [x] Gaussian Distribution
+- [x] Poisson Distribution
+- [x] Chi Distribution
 - [x] Implementation of PCA
 - [x] Study of Eigenfaces and Fisherfaces.
 - [x] Implementation of Eigenfaces.
